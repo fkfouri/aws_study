@@ -34,3 +34,6 @@ Aws study
     ]
 ]
 ```
+
+## visualizar informacoes de uma instance especifica
+- aws ec2 describe-instances --instance-id i-04c712e488f2a0b9c
