@@ -17,14 +17,17 @@ Pode ser que seja necessario usar o WinSCP ou Filezilla, mas eles tamb�m usara
 
 
 
-## aws Configure
+# AWS-CLI Configure
 - aws configure
     - forneca o AWS Access Key ID
     - forneca o AWS Secrete Access KEY
     - Defina a regiao: us-east-1
     - Defina o formato de saida: json
 
-## aws ec2
+A configuracao do AWS-CLI fica armazenada em <b>C:\Users\user\.aws</b>.
+
+
+# aws ec2
 
 - aws ec2 describe-instances --query Reservations[*].Instances[*].{Instance:[InstanceId,InstanceType,State]}
 
@@ -65,3 +68,58 @@ Pode ser que seja necessario usar o WinSCP ou Filezilla, mas eles tamb�m usara
 
 ## parar uma instancia
 - aws ec2 stop-instances --instance-ids i-04c712e488f2a0b9c
+
+
+#  AWS S3
+
+- Help => aws s3 help
+
+## Criar um bucket (make bucket)
+- aws s3 mb s3://aws-estudo-fabio-images
+
+## Exibir uma relação de buckets do S3
+- aws s3 ls
+
+## Remocao de bucket (remove bucket).
+- aws s3 rb s3://aws-estudo-fabio-images
+- aws s3 rb s3://aws-estudo-fabio-images --force (caso o bucket nao esteja vazio)
+
+## Listando objetos de um bucket. So exibe se estiver o bucket estiver na mesma regiao configurada do AWS-CLI
+- aws s3 ls s3://estudo-aws-fabio
+
+
+## Copiar o conteudo de um Bucket para uma maquina local
+- aws s3 cp s3://estudo-aws-fk/foto.jpg .
+
+## Upload de objeto da maquina local para um Bucket
+- aws s3 cp ./test.txt s3://estudo-aws-fk
+
+## Remover um objeto do Bucket
+- aws s3 rm s3://estudo-aws-fk/test.txt
+
+## Renomear/Mover um objeto do bucket
+- aws s3 mv s3://estudo-aws-fk/test.txt s3://estudo-aws-fk/test1.txt 
+
+## Sincronizar do bucket com um repositorio local
+- aws s3 sync s3://estudo-aws-fk/ .
+- aws s3 sync . s3://estudo-aws-fk/
+
+## Sincronizar do bucket com um repositorio local forçando o delete quando aplicavel
+- aws s3 sync . s3://estudo-aws-fk/ --delete
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
