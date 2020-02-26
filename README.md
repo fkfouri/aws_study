@@ -1,17 +1,18 @@
 # aws_study
 Aws study
 
+
 ## Conexao SSH
 - ssh -i file.pem ubuntu@3.220.79.244
-- ssh -i "file.pem" ubuntu@ec2-54-209-154-181.compute-1.amazonaws.com
+- ssh -i "file.pem" ubuntu@ec2-54-209-154-181.compute-1.amazonaws.com## aws Configure
 
 ## Transferencia de arquivos Windows/EC2
 - pscp -i file.ppk  -r alura\html\* ubuntu@ec2-54-209-154-181.compute-1.amazonaws.com:/var/www/html
 
-Para o endereço de destino, é necessario dar acesso 0775 para o usuario Ubuntu.
+Para o endereco de destino, eh necessario dar acesso 0775 para o usuario Ubuntu.
 - sudo chmod -R 0775 /var/www/
 
-Pode ser que seja necessario usar o WinSCP ou Filezilla, mas eles também usarao chaves ppk
+Pode ser que seja necessario usar o WinSCP ou Filezilla, mas eles tamb�m usarao chaves ppk
 - https://www.youtube.com/watch?v=e9BDvg42-JI
 
 
