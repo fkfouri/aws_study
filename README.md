@@ -15,6 +15,10 @@ Para o endereco de destino, eh necessario dar acesso 0775 para o usuario Ubuntu.
 Pode ser que seja necessario usar o WinSCP ou Filezilla, mas eles tamb�m usarao chaves ppk
 - https://www.youtube.com/watch?v=e9BDvg42-JI
 
+## Transferencia do pem para dentro da maquina de gerencia de uma VPC
+- scp -i "aws-estudo-ohio.pem" aws-estudo-ohio.pem ec2-user@ec2-3-15-189-114.us-east-2.compute.amazonaws.com:~/
+
+<p style='color:red'>quando se usa SCP, deve-se usar o arquivo PEM, quando se usa o PSCP, deve-se usar o arquivo PPK.</p>
 
 
 # AWS-CLI Configure
