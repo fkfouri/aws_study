@@ -1,0 +1,28 @@
+AWSTemplateFormatVersion: '2010-09-09'
+#https://www.clouddog.com.br/blog/introducao-ao-aws-cloudformation/
+Description: Infraestrutura Deployment
+Resources:
+  LogsBucket:
+    Type: AWS::S3::Bucket  
+    Properties:
+      AccessControl: LogDeliveryWrite
+  DeployBucket:
+    Type: AWS::S3::Bucket      
+  BackupBucket:
+    Type: AWS::S3::Bucket  
+Outputs:
+  LogsBucketName:
+    Value: !Ref LogsBucket
+    Description: Bucket to store logging in general
+    Export:
+      Name: !Sub ${AWS::StackName}-LogsBucketName
+  DeployBucketName:
+    Value: !Ref DeployBucket
+    Description: Bucket to store deployment artifacts
+    Export:
+      Name: !Sub ${AWS::StackName}-DeployBucketName
+  BackupBucketName:
+    Value: !Ref BackupBucket
+    Description: Bucket to store RDS or any other backup
+    Export:
+      Name: !Sub ${AWS::StackName}-BackupBucketName 
